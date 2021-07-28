@@ -10,7 +10,7 @@ using Model.Abstract;
 
 namespace Repository.EntityFramework
 {
-    class EfdbContextBase<T, TContext> 
+  public  class EfdbContextBase<T, TContext> 
         where T : class, IEntity, new() where TContext : DbContext, new() 
 
     {

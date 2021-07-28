@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model.Abstract;
-using Model.impl;
-using Repository.Abstract;
 
 namespace Repository.EntityFramework
 {
-    public class EfNewsDal : EfdbContextBase<News ,DbContext> , IEntity
+    class ContactDal : EfdbContextBase<ContactDal,DbContext> , IEntity
     {
-        
-
     }
 }

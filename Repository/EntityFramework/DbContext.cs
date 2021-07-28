@@ -8,14 +8,14 @@ using Model.impl;
 
 namespace Repository.EntityFramework
 {
-    class DbContext : Microsoft.EntityFrameworkCore.DbContext
+    public class DbContext : Microsoft.EntityFrameworkCore.DbContext
 
     {
 
 
         public DbSet<News> News { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<ContactDal> Contacts { get; set; }
         public DbSet<Announcements> Announcements { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

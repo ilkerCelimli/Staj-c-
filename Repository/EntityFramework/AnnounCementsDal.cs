@@ -5,13 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Model.Abstract;
 using Model.impl;
-using Repository.Abstract;
 
 namespace Repository.EntityFramework
 {
-    public class EfNewsDal : EfdbContextBase<News ,DbContext> , IEntity
+    class AnnounCementsDal : EfdbContextBase<Announcements,DbContext> ,IEntity
     {
-        
-
     }
 }
