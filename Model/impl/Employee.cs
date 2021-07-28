@@ -59,7 +59,13 @@ namespace Model.impl
 
         public string referancedPhone { get; set; }
 
+        public string appliedTask { get; set; }
 
+        public bool changeOfResidance { get; set; }
+
+        public bool extraShift { get; set; }
+
+        public bool shift { get; set; }
 
 
     }

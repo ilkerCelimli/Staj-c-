@@ -7,10 +7,14 @@ using Model.Abstract;
 
 namespace Model.impl
 {
-    class EmployeeJobExperience : IEntity
+    class News : IEntity
     {
 
-      
+      public long newsId { get; set; }
+
+      public string newsTitle { get; set; }
+
+      public string newsDetail { get; set; }
 
 
 
