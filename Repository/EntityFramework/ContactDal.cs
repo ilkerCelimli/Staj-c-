@@ -7,7 +7,7 @@ using Model.Abstract;
 
 namespace Repository.EntityFramework
 {
-    class ContactDal : EfdbContextBase<ContactDal,DbContext> , IEntity
+  public  class ContactDal : EfdbContextBase<ContactDal,DbContext> , IEntity
     {
     }
 }
