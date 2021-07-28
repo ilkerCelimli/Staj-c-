@@ -8,7 +8,7 @@ using Model.Abstract;
 namespace Model.impl
 { 
     
-    class Contact : IEntity
+   public class Contact : IEntity
     {
         public long contactId { get; set; }
 

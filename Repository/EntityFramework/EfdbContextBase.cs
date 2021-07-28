@@ -10,8 +10,8 @@ using Model.Abstract;
 
 namespace Repository.EntityFramework
 {
-    class EfdbContext<T, TContext> : IEntityRepostory<T>
-        where T : class, IEntity, new() where TContext : DbContext, new()
+    class EfdbContextBase<T, TContext> 
+        where T : class, IEntity, new() where TContext : DbContext, new() 
 
     {
         public List<T> GetAll(Expression<Func<T, bool>> filter = null)

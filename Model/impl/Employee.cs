@@ -7,7 +7,7 @@ using Model.Abstract;
 
 namespace Model.impl
 {
-    class Employee : IEntity
+   public class Employee : IEntity
     {
 
         public long id { get; set; }

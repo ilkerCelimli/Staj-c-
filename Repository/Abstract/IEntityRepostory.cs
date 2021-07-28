@@ -8,7 +8,7 @@ using Model;
 using Model.Abstract;
 namespace Repository.Abstract
 {
-    interface IEntityRepostory<T> where T : class, IEntity, new()
+  public  interface IEntityRepostory<T> where T : class, IEntity, new()
     {
 
         List<T> GetAll(Expression<Func<T, bool>> filter = null);

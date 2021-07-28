@@ -7,7 +7,7 @@ using Model.Abstract;
 
 namespace Model.impl
 {
-    class News : IEntity
+    public class News : IEntity
     {
 
       public long newsId { get; set; }
