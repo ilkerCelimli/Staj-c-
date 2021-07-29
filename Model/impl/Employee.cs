@@ -10,62 +10,63 @@ namespace Model.impl
    public class Employee : IEntity
     {
 
-        public long id { get; set; }
+        public long Id { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public string surname { get; set; }
+        public string Surname { get; set; }
 
-        public long nationalIdendity { get; set; }
+        public long NationalIdendity { get; set; }
 
-        public string gender { get; set; } 
+        public string Gender { get; set; } 
 
-        public string phone { get; set; }
+        public string Phone { get; set; }
 
-        public DateTime birtday { get; set; }
+        public DateTime Birtday { get; set; }
 
 
-        public string workPlace { get; set; }
+        public string WorkPlace { get; set; }
 
-        public string task { get; set; }
+        public string Task { get; set; }
 
-        public string reasonFordeparture { get; set; }
+        public string ReasonForDeparture { get; set; }
 
-        public DateTime starTime { get; set; }
+        public DateTime StartTime { get; set; }
 
-        public DateTime endTime { get; set; }
+        public DateTime EndTime { get; set; }
 
-        public string primarySchool { get; set; }
-        public int primarySchoolRank { get; set; }
-        public bool primarySchoolComplate { get; set; }
+        public string PrimarySchool { get; set; }
+        public int PrimarySchoolRank { get; set; }
+        public bool PrimarySchoolComplate { get; set; }
 
-        public string middleSchool { get; set; }
-        public int middleSchoolRank { get; set; }
-        public bool middleSchoolComplate { get; set; }
+        public string MiddleSchool { get; set; }
+        public int MiddleSchoolRank { get; set; }
+        public bool MiddleSchoolComplate { get; set; }
 
-        public string highSchool { get; set; }
-        public int highSchoolRank { get; set; }
-        public bool highSchoolComplate { get; set; }
+        public string HighSchool { get; set; }
+        public int HighSchoolRank { get; set; }
+        public bool HighSchoolComplate { get; set; }
 
-        public string university { get; set; }
-        public int universityRank { get; set; }
-        public bool universityComplate { get; set; }
+        public string University { get; set; }
+        public int UniversityRank { get; set; }
+        public bool UniversityComplate { get; set; }
 
-        public string driverLicance { get; set; }
+        public string DriverLicance { get; set; }
 
-        public string usedPrograms { get; set; }
+        public string UsedPrograms { get; set; }
 
-        public string referancedInformation { get; set; }
 
-        public string referancedPhone { get; set; }
+        public string ReferancedInformation { get; set; }
 
-        public string appliedTask { get; set; }
+        public string ReferancedPhone { get; set; }
 
-        public bool changeOfResidance { get; set; }
+        public string AppliedTask { get; set; }
 
-        public bool extraShift { get; set; }
+        public bool ChangeOfResidance { get; set; }
 
-        public bool shift { get; set; }
+        public bool ExtraShift { get; set; }
+
+        public bool Shift { get; set; }
 
 
     }

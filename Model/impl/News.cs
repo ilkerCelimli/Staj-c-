@@ -10,11 +10,11 @@ namespace Model.impl
     public class News : IEntity
     {
 
-      public long newsId { get; set; }
+      public long NewsId { get; set; }
 
-      public string newsTitle { get; set; }
+      public string NewsTitle { get; set; }
 
-      public string newsDetail { get; set; }
+      public string NewsDetail { get; set; }
 
 
 

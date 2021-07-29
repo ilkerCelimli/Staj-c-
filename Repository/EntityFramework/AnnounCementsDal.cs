@@ -8,7 +8,7 @@ using Model.impl;
 
 namespace Repository.EntityFramework
 {
-    class AnnounCementsDal : EfdbContextBase<Announcements,DbContext> ,IEntity
+   public class AnnounCementsDal : EfdbContextBase<Announcements,DbContext> ,IEntity
     {
     }
 }

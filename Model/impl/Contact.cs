@@ -10,17 +10,17 @@ namespace Model.impl
     
    public class Contact : IEntity
     {
-        public long contactId { get; set; }
+        public long ContactId { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public string surname { get; set; }
+        public string Surname { get; set; }
 
-        public string phone { get; set; }
+        public string Phone { get; set; }
 
-        public string email { get; set; }
+        public string Email { get; set; }
 
-        public string message { get; set; }
+        public string Message { get; set; }
 
     }
 }

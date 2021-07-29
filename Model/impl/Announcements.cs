@@ -9,9 +9,9 @@ namespace Model.impl
 {
     public class Announcements : IEntity
     {
-        public long annoId { get; set; }
+        public long AnnoId { get; set; }
 
-        public string announcementsTitle { get; set; }
+        public string AnnouncementsTitle { get; set; }
 
         public string AnnouncementsDetail { get; set; }
 
