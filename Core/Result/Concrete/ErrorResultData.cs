@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Result.Impl
+namespace Core.Result.Concrete
 {
    public class ErrorResultData<T> : DataResult<T> , IResult 
     {

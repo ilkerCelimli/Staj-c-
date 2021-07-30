@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace Core.Result.Impl
+namespace Core.Result.Concrete
 {
     public class SuccesfulResult :Result,IResult
     {
