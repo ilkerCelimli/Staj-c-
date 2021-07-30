@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Concretes;
 using Microsoft.EntityFrameworkCore;
-using Model.impl;
+using DataAcceses.EntityFramework;
 
-namespace Repository.EntityFramework
+
+namespace DataAcceses.EntityFramework
 {
     public class DbContext : Microsoft.EntityFrameworkCore.DbContext
 

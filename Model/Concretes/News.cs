@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model.Abstract;
+using Core.Entities.Abstract;
 
-namespace Model.impl
+namespace Entities.Concretes
 {
     public class News : IEntity
     {
 
-      public long NewsId { get; set; }
+      public long Id { get; set; }
 
       public string NewsTitle { get; set; }
 

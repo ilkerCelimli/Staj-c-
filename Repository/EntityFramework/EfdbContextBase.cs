@@ -1,14 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Repository.Abstract;
-using Model.Abstract;
+using Core.Entities.Abstract;
+using Microsoft.EntityFrameworkCore;
 
-namespace Repository.EntityFramework
+
+namespace DataAcceses.EntityFramework
 {
   public  class EfdbContextBase<T, TContext> 
         where T : class, IEntity, new() where TContext : DbContext, new() 

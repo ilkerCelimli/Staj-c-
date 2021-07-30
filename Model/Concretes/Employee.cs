@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model.Abstract;
+using Core.Entities.Abstract;
 
-namespace Model.impl
+namespace Entities.Concretes
 {
    public class Employee : IEntity
     {

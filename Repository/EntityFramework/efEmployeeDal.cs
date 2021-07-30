@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model.Abstract;
-using Model.impl;
+using Core.Entities.Abstract;
+using DataAcceses.EntityFramework;
+using Entities.Concretes;
 
-namespace Repository.EntityFramework
+namespace DataAcceses.EntityFramework
 {
     public class EfEmployeeDal :EfdbContextBase<Employee,DbContext> , IEntity
     {

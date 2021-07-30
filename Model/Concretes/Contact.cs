@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model.Abstract;
+using Core.Entities.Abstract;
 
-namespace Model.impl
+namespace Entities.Concretes
 { 
     
    public class Contact : IEntity
     {
-        public long ContactId { get; set; }
+        public long Id { get; set; }
 
         public string Name { get; set; }
 
