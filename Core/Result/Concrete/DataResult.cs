@@ -9,6 +9,7 @@ namespace Core.Result.Concrete
     public class DataResult<T> : IDataResult<T>
     {
 
+
         public DataResult(string message, bool status)
         {
             new DataResult<T>(message,status);
@@ -30,6 +31,10 @@ namespace Core.Result.Concrete
 
         }
 
+        public DataResult(List<T> list) 
+        {
+            new DataResult<T>(list);
+        }
 
     }
 }

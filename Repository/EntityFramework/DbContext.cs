@@ -17,12 +17,21 @@ namespace DataAcceses.EntityFramework
 
         public DbSet<News> News { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<ContactDal> Contacts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Announcements> Announcements { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("@Server=localhost:5432;Database=Staj;User ID=postgres; password=12345;Integrated Security=false;");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-OOU7LQL;Initial Catalog=staj;Integrated Security=True");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<News>().HasKey(p => p.Id);
+            modelBuilder.Entity<Employee>().HasKey(p => p.Id);
+            modelBuilder.Entity<Contact>().HasKey(p => p.Id);
+            modelBuilder.Entity<Announcements>().HasKey(p => p.Id);
         }
     }
 

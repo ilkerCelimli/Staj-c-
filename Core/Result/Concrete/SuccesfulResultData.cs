@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.SignalR.Protocol;
 
 namespace Core.Result.Concrete
 {
    public class SuccesfulResultData<T> : DataResult<T>, IDataResult<T>
    {
+        public SuccesfulResultData(List<global::Entities.Concretes.News> news)
+        {
+            News = news;
+        }
 
-      public SuccesfulResultData(string message, bool status) : base(message,status)
+        public SuccesfulResultData(string message, bool status) : base(message,status)
        {
            new SuccesfulResult(status, message);
        }
@@ -19,5 +24,6 @@ namespace Core.Result.Concrete
           new ErrorResultData<T>(data,message, status);
       }
 
-   }
+        public List<global::Entities.Concretes.News> News { get; }
+    }
 }
