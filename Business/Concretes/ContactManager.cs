@@ -83,7 +83,7 @@ namespace Business.Concretes
         {
             try
             {
-                return new DataResult<Contact>(contactDal.Get(i => i.Id == id));
+                return new SuccesfulResultData<Contact>(contactDal.Get(i => i.Id == id));
             }
             catch (Exception e)
             {

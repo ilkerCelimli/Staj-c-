@@ -8,24 +8,20 @@ namespace Core.Result.Concrete
 {
     public class Result : IResult
     {
-        public bool Status { get; set; }
-
-        public string Message { get; set; }
-
-
-
-        public Result(bool status)
+        public Result(bool success, string messages) : this(success)
         {
-            this.Status = status;
-
+            Messages = messages;
+        }
+        public Result(bool success)
+        {
+            Success = success;
         }
 
-        public Result(bool status, string message)
-        {
-            this.Status = status;
-            this.Message = message;
 
-        }
-        
+        public bool Success { get; }
+
+        public string Messages { get; }
+
+
     }
 }

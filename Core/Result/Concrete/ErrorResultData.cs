@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace Core.Result.Concrete
 {
-   public class ErrorResultData<T> : DataResult<T> , IResult 
+   public class ErrorResultData<T> : DataResult<T>   
     {
-        public ErrorResultData(string message, bool status) : base(message, status)
+        public ErrorResultData(T data, string messages) : base(data, false, messages)
         {
-            new ErrorResult(status);
         }
-
-        public ErrorResultData(T data, string message, bool status) : base(message, status)
+        public ErrorResultData(T data) : base(data, false)
         {
-            new ErrorResultData<T>(data, message, status);
+
         }
-
-        public ErrorResultData(bool status) : base(status) 
+        public ErrorResultData(string message) : base(default, false, message)
         {
-            new ErrorResult(status);
+
+        }
+        public ErrorResultData() : base(default, false)
+        {
+
         }
 
     }

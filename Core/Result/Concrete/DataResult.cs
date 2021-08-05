@@ -6,35 +6,24 @@ using System.Threading.Tasks;
 
 namespace Core.Result.Concrete
 {
-    public class DataResult<T> : IDataResult<T>
+    public class DataResult<T> : Result, IDataResult<T>
     {
 
 
-        public DataResult(string message, bool status)
+        public DataResult(T data, bool success, string messages) : base(success, messages)
         {
-            new DataResult<T>(message,status);
+            Data = data;
+        }
+        public DataResult(T data, bool success) : base(success)
+        {
+            Data = data;
         }
 
-        public DataResult(T data)
+        public T Data { get; }
+
+        public DataResult(List<T> data) : base(true)
         {
-            new DataResult<T>(data);
+            
         }
-
-        public DataResult(string message, T data, bool status)
-        {
-            new DataResult<T>(message,data, status);
-        }
-
-        public DataResult(bool status)
-        {
-            new DataResult<T>(status);
-
-        }
-
-        public DataResult(List<T> list) 
-        {
-            new DataResult<T>(list);
-        }
-
     }
 }

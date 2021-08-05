@@ -8,6 +8,7 @@ namespace Core.Result
 {
    public interface IResult
     {
- 
+        bool Success { get; }
+        string Messages { get; }
     }
 }

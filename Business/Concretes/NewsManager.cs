@@ -85,7 +85,7 @@ namespace Business.Concretes
         {
             try
             {
-                return new DataResult<News>(efNews.Get(n => n.Id ==id));
+                return new SuccesfulResultData<News>(efNews.Get(n => n.Id ==id));
             }
             catch (Exception e)
             {

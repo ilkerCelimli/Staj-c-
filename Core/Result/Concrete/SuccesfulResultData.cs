@@ -7,23 +7,20 @@ using Microsoft.AspNetCore.SignalR.Protocol;
 
 namespace Core.Result.Concrete
 {
-   public class SuccesfulResultData<T> : DataResult<T>, IDataResult<T>
+   public class SuccesfulResultData<T> : DataResult<T>
    {
-        public SuccesfulResultData(List<global::Entities.Concretes.News> news)
-        {
-            News = news;
-        }
-
-        public SuccesfulResultData(string message, bool status) : base(message,status)
+       public SuccesfulResultData(T data, string messages) : base(data, true, messages)
        {
-           new SuccesfulResult(status, message);
+       }
+       public SuccesfulResultData(T data) : base(data, true)
+       {
+
        }
 
-      public SuccesfulResultData(T data, bool status,string message) : base(message, data,status)
-      {
-          new ErrorResultData<T>(data,message, status);
-      }
+       public SuccesfulResultData(List<T> data) : base(data)
+       {
 
-        public List<global::Entities.Concretes.News> News { get; }
+       }
+
     }
 }

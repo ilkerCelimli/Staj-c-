@@ -61,11 +61,11 @@ namespace Business.Concretes
         {
             try
             {
-                return new DataResult<Employee>(employeeDal.GetAll().ToList());
+                return new SuccesfulResultData<Employee>(employeeDal.GetAll().ToList());
             }
             catch (Exception e)
             {
-                return new ErrorResult(false, "Hata");
+                return null;
 
             }
         }
@@ -74,7 +74,7 @@ namespace Business.Concretes
         {
             try
             {
-                return new DataResult<Employee>(employeeDal.Get(i => i.Id == id));
+                return new SuccesfulResultData<Employee>(employeeDal.Get(i => i.Id == id));
             }
             catch (Exception e)
             {

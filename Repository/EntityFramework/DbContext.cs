@@ -10,17 +10,25 @@ using DataAcceses.EntityFramework;
 
 namespace DataAcceses.EntityFramework
 {
-    public class DbContext : Microsoft.EntityFrameworkCore.DbContext
+    public class DbContext : Microsoft.EntityFrameworkCore.DbContext 
 
     {
+       public DbContext(DbContextOptions options) : base(options)
+       {
 
+       }
+
+       public DbContext()
+       {
+
+       }
 
         public DbSet<News> News { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }    
         public DbSet<Announcements> Announcements { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-OOU7LQL;Initial Catalog=staj;Integrated Security=True");
         }

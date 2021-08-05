@@ -80,7 +80,7 @@ namespace Business.Concretes
        {
            try
            {
-               return new DataResult<Announcements>(announCementsDal.Get(i => i.Id == id));
+               return new SuccesfulResultData<Announcements>(announCementsDal.Get(i => i.Id == id));
            }
            catch (Exception e)
            {
