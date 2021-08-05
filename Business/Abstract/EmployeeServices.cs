@@ -13,7 +13,7 @@ namespace Business.Abstract
 
         IResult AddEmployee(Employee employee);
         IResult DeleteEmployee(int id);
-        IResult UpdateEmployee(Employee employee);
+        IResult UpdateEmployee(int id,Employee employee);
          IResult GetAll();
         IResult GetEmployee(int i );
 

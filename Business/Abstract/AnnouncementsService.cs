@@ -8,12 +8,12 @@ using Entities.Concretes;
 
 namespace Business.Abstract
 {
-    interface IAnnouncementsService
+   public interface IAnnouncementsService
     {
 
         IResult AddAnnouncement(Announcements announcements);
         IResult DeleteAnnouncement(int id);
-        IResult UpdateAnnouncement(Announcements announcements);
+        IResult UpdateAnnouncement(int id ,Announcements announcements);
         IResult GetAllAnnouncement();
         IResult GetAnnouncement(int id);
 

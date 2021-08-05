@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.DependecyResorve.Ninject;
 using Core.Result;
 using Core.Result.Concrete;
 using DataAcceses.EntityFramework;
@@ -12,13 +13,10 @@ using Entities.Concretes;
 namespace Business.Concretes
 {
    public class EmployeeManager : IEmployeeServices
-    {
-        private EfEmployeeDal employeeDal;
+   {
+       private readonly EfEmployeeDal employeeDal = InstanceFactory.GetInstance<EfEmployeeDal>();
 
-        public EmployeeManager(EfEmployeeDal employeeDal)
-        {
-            this.employeeDal = employeeDal;
-        }
+      
 
 
         public IResult AddEmployee(Employee employee)
@@ -42,10 +40,14 @@ namespace Business.Concretes
            return new SuccesfulResult(true, "Ekelndi");
         }
 
-        public IResult UpdateEmployee(Employee employee)
+        public IResult UpdateEmployee(int id ,Employee employee)
         {
             try
             {
+               Employee employeeDumy = employeeDal.Get(e => e.Id == id);
+
+               employee.Id = employeeDumy.Id;
+
                 employeeDal.Update(employee);
 
                 return new SuccesfulResult(true, "Güncellendi");

@@ -52,10 +52,15 @@ namespace Business.Concretes
             }
         }
 
-        public IResult UpdateContact(Contact contact)
+        public IResult UpdateContact(int id ,Contact contact)
         {
             try
             {
+
+                Contact dumy = contactDal.Get(i => i.Id == id);
+
+                contact.Id = id;
+
           contactDal.Update(contact);
           return new SuccesfulResult(true, "güncellendi");
             }

@@ -53,10 +53,13 @@ namespace Business.Concretes
             }
         }
 
-        public IResult UpdateNews(News news)
+        public IResult UpdateNews(int id ,News news)
         {
             try
             {
+
+                News dummy = efNews.Get(i => i.Id == id);
+                news.Id = dummy.Id;
                 efNews.Update(news);
 
                 return new SuccesfulResult(true, "Güncellendi");

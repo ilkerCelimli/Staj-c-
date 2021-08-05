@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.DependecyResorve.Ninject;
 using Core.Result;
 using Core.Result.Concrete;
 using DataAcceses.EntityFramework;
@@ -13,12 +14,9 @@ namespace Business.Concretes
 {
    public class AnnouncementManager : IAnnouncementsService
    {
-       private AnnounCementsDal announCementsDal;
+       private readonly AnnounCementsDal announCementsDal = InstanceFactory.GetInstance<AnnounCementsDal>();
 
-       public AnnouncementManager(AnnounCementsDal announCementsDal)
-       {
-           this.announCementsDal = announCementsDal;
-       }
+       
 
        public IResult AddAnnouncement(Announcements announcements)
        {
@@ -49,10 +47,14 @@ namespace Business.Concretes
             }
         }
 
-       public IResult UpdateAnnouncement(Announcements announcements)
+       public IResult UpdateAnnouncement(int id ,Announcements announcements)
        {
            try
            {
+               Announcements dumy = announCementsDal.Get(a => a.Id == id);
+
+               announcements.Id = dumy.Id;
+
                announCementsDal.Update(announcements);
                return new SuccesfulResult(true, "Güncellendi");
            }

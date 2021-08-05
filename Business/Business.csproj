@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Repository\DataAcceses.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.4" />
+  </ItemGroup>
+
 </Project>

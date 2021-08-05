@@ -14,7 +14,7 @@ public interface INewsServices
 
     IResult AddNews(News news);
     IResult DeleteNews(int id);
-    IResult UpdateNews(News news);
+    IResult UpdateNews(int id ,News news);
     IResult GetAllNews();
     IResult GetNews(int id);
 

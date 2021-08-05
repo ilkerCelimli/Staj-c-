@@ -13,7 +13,7 @@ namespace Business.Abstract
 
         IResult AddContact(Contact contact);
         IResult DeleteContact(int id);
-        IResult UpdateContact(Contact contact);
+        IResult UpdateContact(int id ,Contact contact);
         IResult GetAllContact();
         IResult GetContact(int id);
 
