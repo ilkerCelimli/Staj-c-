@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.DependecyResorve.Ninject;
 using Core.Result;
 using Core.Result.Concrete;
 using DataAcceses.EntityFramework;
@@ -14,13 +15,7 @@ namespace Business.Concretes
   public  class ContactManager : IContactService
 
   {
-      private ContactDal contactDal
-          ;
-
-      public ContactManager(ContactDal contactDal)
-      {
-          this.contactDal = contactDal;
-      }
+      private readonly ContactDal contactDal = InstanceFactory.GetInstance<ContactDal>();
 
 
         public IResult AddContact(Contact contact)

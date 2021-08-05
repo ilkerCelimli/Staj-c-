@@ -5,6 +5,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.DependecyResorve.Ninject;
 using Core.Result;
 using Core.Result.Concrete;
 using DataAcceses.EntityFramework;
@@ -15,12 +16,10 @@ namespace Business.Concretes
    public class NewsManager : INewsServices
    {
 
-       private EfNewsDal efNews;
+       private readonly EfNewsDal efNews = InstanceFactory.GetInstance<EfNewsDal>();
 
-       public NewsManager(EfNewsDal efNews)
-       {
-           this.efNews = efNews;
-       } 
+     
+       
 
         public IResult AddNews(News news)
         {
