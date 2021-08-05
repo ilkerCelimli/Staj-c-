@@ -31,6 +31,7 @@ namespace Business.Concretes
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 return new ErrorResult(false, "Hata oluştu." );
             }
 
@@ -47,6 +48,7 @@ namespace Business.Concretes
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 return new ErrorResult(false, "Hata alındı");
                 
             }
@@ -65,6 +67,7 @@ namespace Business.Concretes
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 return new ErrorResult(false, "Hata");
                 
             }
@@ -78,6 +81,7 @@ namespace Business.Concretes
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 return new ErrorResult(false, "hata");
                 
             }
