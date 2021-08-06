@@ -17,6 +17,10 @@ namespace Core.Result.Concrete
             Success = success;
         }
 
+        public Result()
+        {
+
+        }
 
         public bool Success { get; }
 

@@ -10,20 +10,12 @@ namespace Core.Result.Concrete
 {
     public class SuccesfulResult :Result,IResult
     {
-    
-
-        public SuccesfulResult(bool status) : base(status)
+        public SuccesfulResult(string messages) : base(true, messages)
         {
-            new SuccesfulResult(status);
         }
-
-  
-
-        public SuccesfulResult(bool status, string message) : base(status, message)
+        public SuccesfulResult() : base(true)
         {
-          
 
-            new SuccesfulResult(true, message :message);
         }
     }
 }

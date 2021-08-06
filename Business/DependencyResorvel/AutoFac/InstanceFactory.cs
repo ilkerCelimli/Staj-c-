@@ -13,7 +13,7 @@ namespace Business.DependecyResorve.Ninject
 
         public static T  GetInstance<T>()
         {
-            var kernel = new StandardKernel(new BusinessModule());
+            var kernel = new StandardKernel(new AutofacBusinessModule());
             return kernel.Get<T>();
         }
 

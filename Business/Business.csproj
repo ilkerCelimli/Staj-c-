@@ -1,17 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\Model\Entities.csproj" />
-    <ProjectReference Include="..\Repository\DataAcceses.csproj" />
+    <PackageReference Include="Autofac" Version="6.2.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+    <PackageReference Include="Castle.Core" Version="4.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ninject" Version="3.3.4" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Model\Entities.csproj" />
+    <ProjectReference Include="..\Repository\DataAcceses.csproj" />
   </ItemGroup>
 
 </Project>

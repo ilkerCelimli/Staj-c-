@@ -8,6 +8,7 @@ namespace Core.Result.Concrete
 {
     public class ErrorResult: Result
     {
+        private string message;
 
         public ErrorResult(bool b, string messages) : base(false, messages)
         {
@@ -17,5 +18,12 @@ namespace Core.Result.Concrete
         {
 
         }
+
+        public ErrorResult(string message) 
+        {
+            this.message = message;
+        }
+
+
     }
 }

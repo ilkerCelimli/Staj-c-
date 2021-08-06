@@ -33,14 +33,6 @@ namespace DataAcceses.EntityFramework
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-OOU7LQL;Initial Catalog=staj;Integrated Security=True");
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<News>().HasKey(p => p.Id);
-            modelBuilder.Entity<Employee>().HasKey(p => p.Id);
-            modelBuilder.Entity<Contact>().HasKey(p => p.Id);
-            modelBuilder.Entity<Announcements>().HasKey(p => p.Id);
-        }
     }
 
   
