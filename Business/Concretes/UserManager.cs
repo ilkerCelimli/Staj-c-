@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Core.Entities.Concrete;
+using Core.Entities.Dto;
 using Core.Result;
 using Core.Result.Concrete;
 using Core.Utilities.Security.Hashing;
@@ -64,12 +65,20 @@ namespace Business.Concretes
             return new SuccesfulResultData<User>(userDal.Get(p => p.Id == userId));
         }
 
+        public DataResult<UserAndOperationDto> GetUserAndClaim(string email)
+        {
+            return new SuccesfulResultData<UserAndOperationDto>(userDal.GetUserAndClaim(email));
+        }
+
 
         public DataResult<User> GetByMail(string email)
         {
             return new SuccesfulResultData<User>(userDal.Get(p => p.Email == email));
         }
 
-
+        public DataResult<List<OperationClaims>> GetClaims(User user)
+        {
+            return new SuccesfulResultData<List<OperationClaims>>(userDal.GetClaims(user));
+        }
     }
 }
