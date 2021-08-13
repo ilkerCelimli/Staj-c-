@@ -11,7 +11,7 @@ using Castle.DynamicProxy;
 using Core.Utilities.Security.Jwt;
 using DataAcceses.EntityFramework;
 using Autofac.Extras.DynamicProxy;
-
+using Core.Aspects.Autofac.Validation;
 
 namespace Business.DependecyResorve.Ninject
 {
