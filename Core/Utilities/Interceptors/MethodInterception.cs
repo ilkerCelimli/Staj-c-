@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Castle.Core.Interceptor;
+
+using Castle.DynamicProxy;
 
 namespace Core.Utilities.Interceptors
 {
@@ -14,7 +15,7 @@ namespace Core.Utilities.Interceptors
         protected virtual void OnException(IInvocation invocation, System.Exception e) { }
         protected virtual void OnSuccess(IInvocation invocation) { }
 
-        public override void Intercept(IInvocation invocation)
+        public void Intercept(IInvocation invocation)
         {
             var isSuccess = true;
             OnBefore(invocation);

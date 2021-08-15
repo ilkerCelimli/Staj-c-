@@ -23,9 +23,9 @@ namespace Business.Concretes
            try
            {
               announCementsDal.Add(announcements);
-              return new SuccesfulResult(true, "Eklendi");
+              return new SuccesfulResult("Eklendi");
            }
-           catch (Exception e)
+            catch (Exception e)
            {
                Console.Write(e.Message);
                return new ErrorResult(false, "Hata");
@@ -39,9 +39,9 @@ namespace Business.Concretes
            {
                announCementsDal.Delete(announCementsDal.Get(i=> i .Id == id));
 
-               return new SuccesfulResult(true, "Silindi");
+               return new SuccesfulResult("Eklendi");
            }
-           catch (Exception e)
+            catch (Exception e)
            {
                Console.Write(e.Message);
                 return new ErrorResult(false, "Hata");
@@ -58,9 +58,9 @@ namespace Business.Concretes
                announcements.Id = dumy.Id;
 
                announCementsDal.Update(announcements);
-               return new SuccesfulResult(true, "Güncellendi");
+               return new SuccesfulResult("Eklendi");
            }
-           catch (Exception e)
+            catch (Exception e)
            {
                Console.Write(e.Message);
                 return new ErrorResult(false, "Hata");

@@ -1,10 +1,10 @@
-﻿using Castle.Core.Interceptor;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Castle.DynamicProxy;
 using Core.CrossCutingConcern.Validation;
 using Core.Utilities.Interceptors;
 using FluentValidation;

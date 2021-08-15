@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Castle.Core.Interceptor;
+using Castle.DynamicProxy;
 using Core.CrossCutingConcern.Caching;
 using Core.Utilities.Interceptors;
 using Core.Utilities.IoC;
@@ -24,7 +24,7 @@ namespace Core.Aspects.Autofac.Caching
            _cacheManager = ServiceTool.ServiceProvider.GetService<ICacheManager>();
        }
 
-       public override void Incercept(IInvocation iInvocation)
+       public  void Incercept(IInvocation iInvocation)
        {
            var methodName = string.Format($"{iInvocation.Method.ReflectedType.FullName}.{iInvocation.Method.Name}");
            var arguments = iInvocation.Arguments.ToList();
@@ -39,4 +39,4 @@ namespace Core.Aspects.Autofac.Caching
        }
     }
    }
-}
+

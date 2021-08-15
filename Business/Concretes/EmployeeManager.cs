@@ -25,7 +25,7 @@ namespace Business.Concretes
             {
                 employeeDal.Add(employee);
 
-                return new SuccesfulResult(true, "Eklendi");
+                return new SuccesfulResult("eklendi");
             }
             catch (Exception e)
             {
@@ -38,7 +38,7 @@ namespace Business.Concretes
         {
            employeeDal.Delete(employeeDal.Get(i => i.Id == id));
 
-           return new SuccesfulResult(true, "Ekelndi");
+           return new SuccesfulResult("Eklendi");
         }
 
         public IResult UpdateEmployee(int id ,Employee employee)
@@ -51,7 +51,7 @@ namespace Business.Concretes
 
                 employeeDal.Update(employee);
 
-                return new SuccesfulResult(true, "Güncellendi");
+                return new SuccesfulResult( "Güncellendi");
             }
             catch (Exception e)
             {

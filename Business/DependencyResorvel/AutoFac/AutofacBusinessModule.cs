@@ -12,6 +12,7 @@ using Core.Utilities.Security.Jwt;
 using DataAcceses.EntityFramework;
 using Autofac.Extras.DynamicProxy;
 using Core.Aspects.Autofac.Validation;
+using Core.Utilities.Interceptors;
 
 namespace Business.DependecyResorve.Ninject
 {
@@ -38,7 +39,7 @@ namespace Business.DependecyResorve.Ninject
             builder.RegisterAssemblyTypes(assemly).AsImplementedInterfaces()
                 .EnableInterfaceInterceptors(new ProxyGenerationOptions()
                 {
-                    Selector = new AspectInterceptorSelector()
+                    Selector = new AspectIncerteptorSelector()
                 }).SingleInstance();
         }
     }

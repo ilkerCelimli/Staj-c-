@@ -5,23 +5,23 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Castle.Core.Configuration;
 using Core.Entities.Concrete;
 using Core.Utilities.Security.Encryption;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Core.Utilities.Security.Jwt
 {
    public class JwtHelper: ITokenHelper
-    {
-        public IConfiguration Configuration { get; }
-        private readonly TokenOptions _tokenOptions;
+   {
+       public IConfiguration Configuration{ get; }
+       private readonly TokenOptions _tokenOptions;
         private DateTime _accessTokenExpiration;
 
-        public JwtHelper(IConfiguration configuration)
+        public JwtHelper(IConfiguration configuration, TokenOptions TokenOptions)
         {
             Configuration = configuration;
-            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+            _tokenOptions = TokenOptions;
         }
 
 

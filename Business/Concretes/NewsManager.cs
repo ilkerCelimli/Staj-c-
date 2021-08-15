@@ -27,7 +27,7 @@ namespace Business.Concretes
             try
             {
                 efNews.Add(news);
-                return new SuccesfulResult(true, "Haber başarı ile kaydedildi.");
+                return new SuccesfulResult("Eklendi");
             }
             catch (Exception e)
             {
@@ -44,7 +44,7 @@ namespace Business.Concretes
               News news = efNews.Get(n => n.Id == id);
                 efNews.Delete(news);
 
-                return new SuccesfulResult(true, "Haber silindi");
+                return new SuccesfulResult("Eklendi");
             }
             catch (Exception e)
             {
@@ -63,7 +63,7 @@ namespace Business.Concretes
                 news.Id = dummy.Id;
                 efNews.Update(news);
 
-                return new SuccesfulResult(true, "Güncellendi");
+                return new SuccesfulResult("Eklendi");
             }
             catch (Exception e)
             {

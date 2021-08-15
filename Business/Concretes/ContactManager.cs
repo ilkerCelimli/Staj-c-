@@ -23,7 +23,7 @@ namespace Business.Concretes
             try
             {
                contactDal.Add(contact);
-               return new SuccesfulResult(true, "Eklendi");
+               return new SuccesfulResult("Eklendi");
             }
             catch (Exception e)
             {
@@ -39,7 +39,7 @@ namespace Business.Concretes
             {
                 contactDal.Delete(contactDal.Get(i => i.Id == id));
 
-                return new SuccesfulResult(true, "Silindi");
+                return new SuccesfulResult("Eklendi");
             }
             catch (Exception e)
             {
@@ -59,7 +59,7 @@ namespace Business.Concretes
                 contact.Id = id;
 
           contactDal.Update(contact);
-          return new SuccesfulResult(true, "güncellendi");
+          return new SuccesfulResult("Eklendi");
             }
             catch (Exception e)
             {

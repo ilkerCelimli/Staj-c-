@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Castle.Core.Interceptor;
 using Castle.DynamicProxy;
 
 namespace Core.Utilities.Interceptors
@@ -20,7 +19,7 @@ namespace Core.Utilities.Interceptors
             classAttributes.AddRange(methodAttributes);
 
 
-            return classAttributes.OrderBy(x => x.Priority).ToArray();
+            return (IInterceptor[])classAttributes.OrderBy(x => x.Priority).ToArray();
         }
     }
 }
