@@ -11,7 +11,7 @@ namespace Core.Aspects.Transaction
 {
     public class TransactionScopeAspect : MethodInterception
     {
-        public  void Intercept(IInvocation invocation)
+        public override void Intercept(IInvocation invocation)
         {
             using (TransactionScope transactionScope = new TransactionScope())
             {

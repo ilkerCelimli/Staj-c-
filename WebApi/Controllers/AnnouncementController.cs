@@ -16,7 +16,12 @@ namespace WebApi.Controllers
 
     {
 
-        private readonly IAnnouncementsService _service = InstanceFactory.GetInstance<IAnnouncementsService>();
+        private readonly IAnnouncementsService _service;
+
+        public AnnouncementController(IAnnouncementsService announcementsService)
+        {
+            _service = announcementsService;
+        }
 
 
 

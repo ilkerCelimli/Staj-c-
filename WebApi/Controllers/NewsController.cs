@@ -15,8 +15,12 @@ namespace WebApi.Controllers
     public class NewsController : Controller
     {
 
-        private readonly INewsServices _services = InstanceFactory.GetInstance<INewsServices>();
+        private readonly INewsServices _services;
 
+        public NewsController(INewsServices news)
+        {
+            _services = news;
+        }
 
         [HttpGet("/News/getall")]
 

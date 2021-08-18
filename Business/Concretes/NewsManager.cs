@@ -16,8 +16,12 @@ namespace Business.Concretes
    public class NewsManager : INewsServices
    {
 
-       private readonly EfNewsDal efNews = InstanceFactory.GetInstance<EfNewsDal>();
+       private readonly EfNewsDal efNews;
 
+       public NewsManager(EfNewsDal efNews)
+       {
+           this.efNews = efNews;
+       }
      
        
 

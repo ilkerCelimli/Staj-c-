@@ -18,7 +18,12 @@ namespace WebApi.Controllers
     public class EmployeeController : ControllerBase
     {
 
-        private readonly IEmployeeServices employee = InstanceFactory.GetInstance<IEmployeeServices>();
+        private readonly IEmployeeServices employee;
+
+        public EmployeeController(IEmployeeServices employee)
+        {
+            this.employee = employee;
+        }
 
 
 

@@ -7,6 +7,7 @@ using Business.Abstract;
 using Business.DependecyResorve.Ninject;
 using Core.Result;
 using Core.Result.Concrete;
+using DataAcceses.Abstract;
 using DataAcceses.EntityFramework;
 using Entities.Concretes;
 
@@ -14,9 +15,14 @@ namespace Business.Concretes
 {
    public class AnnouncementManager : IAnnouncementsService
    {
-       private readonly AnnounCementsDal announCementsDal = InstanceFactory.GetInstance<AnnounCementsDal>();
+       private readonly AnnounCementsDal announCementsDal;
 
-       
+       public AnnouncementManager(AnnounCementsDal announCementsDal)
+       {
+           this.announCementsDal = announCementsDal;
+       }
+
+
 
        public IResult AddAnnouncement(Announcements announcements)
        {

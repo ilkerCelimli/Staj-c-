@@ -24,7 +24,7 @@ namespace Core.Aspects.Autofac.Caching
            _cacheManager = ServiceTool.ServiceProvider.GetService<ICacheManager>();
        }
 
-       public  void Incercept(IInvocation iInvocation)
+       public override  void Intercept(IInvocation iInvocation)
        {
            var methodName = string.Format($"{iInvocation.Method.ReflectedType.FullName}.{iInvocation.Method.Name}");
            var arguments = iInvocation.Arguments.ToList();

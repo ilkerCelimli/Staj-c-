@@ -36,6 +36,7 @@ namespace DataAcceses.EntityFramework
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-OOU7LQL;Initial Catalog=staj;Integrated Security=True");
+            
         }
 
     }

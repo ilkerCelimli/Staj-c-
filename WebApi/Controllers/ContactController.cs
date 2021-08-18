@@ -15,8 +15,12 @@ namespace WebApi.Controllers
     [Route("[Controller]")]
     public class ContactController : Controller
     {
-        private readonly IContactService _service = InstanceFactory.GetInstance<IContactService>();
+        private readonly IContactService _service;
 
+        public ContactController(IContactService contact)
+        {
+            _service = contact;
+        }
 
         [HttpGet("/Contact/GetAll")]
 

@@ -15,8 +15,12 @@ namespace Business.Concretes
   public  class ContactManager : IContactService
 
   {
-      private readonly ContactDal contactDal = InstanceFactory.GetInstance<ContactDal>();
+      private readonly ContactDal contactDal;
 
+      public ContactManager(ContactDal contact)
+      {
+          contactDal = contact;
+      }
 
         public IResult AddContact(Contact contact)
         {

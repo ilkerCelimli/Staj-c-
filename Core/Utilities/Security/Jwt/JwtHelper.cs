@@ -18,10 +18,18 @@ namespace Core.Utilities.Security.Jwt
        private readonly TokenOptions _tokenOptions;
         private DateTime _accessTokenExpiration;
 
-        public JwtHelper(IConfiguration configuration, TokenOptions TokenOptions)
+        public JwtHelper(IConfiguration configuration)
         {
             Configuration = configuration;
-            _tokenOptions = TokenOptions;
+            _tokenOptions.AccessTokenExpiration =
+                int.Parse(Configuration.GetSection("TokenOptions").GetSection("AccessTokenExpiration").Value);
+            _tokenOptions.Audience =
+                Configuration.GetSection("TokenOptions").GetSection("Audience").Value;
+            _tokenOptions.Issuer =
+                Configuration.GetSection("TokenOptions").GetSection("Issuer").Value;
+            _tokenOptions.SecurityKey =
+                Configuration.GetSection("TokenOptions").GetSection("SecurityKey").Value;
+
         }
 
 

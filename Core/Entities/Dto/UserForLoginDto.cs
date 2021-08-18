@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Entities.Abstract;
 
-using Core.Entities.Abstract;namespace Entities.Dto
+namespace Entities.Dto
 {
     public class UserForLoginDto : IDto
     {

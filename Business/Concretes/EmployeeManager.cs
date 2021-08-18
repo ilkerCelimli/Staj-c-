@@ -14,8 +14,12 @@ namespace Business.Concretes
 {
    public class EmployeeManager : IEmployeeServices
    {
-       private readonly EfEmployeeDal employeeDal = InstanceFactory.GetInstance<EfEmployeeDal>();
+       private readonly EfEmployeeDal employeeDal;
 
+       public EmployeeManager(EfEmployeeDal efEmployee)
+       {
+           this.employeeDal = efEmployee;
+       } 
       
 
 

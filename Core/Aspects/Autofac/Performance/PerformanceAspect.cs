@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Castle.DynamicProxy;
+using Core.Utilities.Interceptors;
 using Core.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
 namespace Core.Aspects.Autofac.Performance
 {
-    public class PerformanceAspect
+    public class PerformanceAspect : MethodInterception
     {
 
         
@@ -23,12 +24,12 @@ namespace Core.Aspects.Autofac.Performance
         }
 
 
-        protected void OnBefore(IInvocation invocation)
+        protected override void OnBefore(IInvocation invocation)
         {
             _stopwatch.Start();
         }
 
-        protected void OnAfter(IInvocation invocation)
+        protected override void OnAfter(IInvocation invocation)
         {
             if (_stopwatch.Elapsed.TotalSeconds > _interval)
             {
