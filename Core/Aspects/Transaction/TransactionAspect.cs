@@ -22,6 +22,7 @@ namespace Core.Aspects.Transaction
                 }
                 catch (Exception e)
                 {
+                    Console.WriteLine(e.Message);
                     transactionScope.Dispose();
                     throw;
                 }

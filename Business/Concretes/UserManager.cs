@@ -26,7 +26,7 @@ namespace Business.Concretes
 
         public IResult Add(User user)
         {
-           userDal.Add(user);
+            userDal.Add(user);
            return new SuccesfulResult("Eklendi");
         }
 

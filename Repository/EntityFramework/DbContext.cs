@@ -14,15 +14,14 @@ namespace DataAcceses.EntityFramework
     public class DbContext : Microsoft.EntityFrameworkCore.DbContext 
 
     {
-       public DbContext(DbContextOptions options) : base(options)
-       {
+   
+        public DbContext() {}
 
-       }
-
-       public DbContext()
-       {
-
-       }
+        public DbContext(DbContextOptions options) : base(options)
+        {
+          
+            Database.EnsureCreated();
+        }
 
         public DbSet<News> News { get; set; }
         public DbSet<Employee> Employees { get; set; }

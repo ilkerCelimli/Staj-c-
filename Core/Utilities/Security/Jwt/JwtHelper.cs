@@ -21,15 +21,15 @@ namespace Core.Utilities.Security.Jwt
         public JwtHelper(IConfiguration configuration)
         {
             Configuration = configuration;
-            _tokenOptions.AccessTokenExpiration =
-                int.Parse(Configuration.GetSection("TokenOptions").GetSection("AccessTokenExpiration").Value);
-            _tokenOptions.Audience =
-                Configuration.GetSection("TokenOptions").GetSection("Audience").Value;
-            _tokenOptions.Issuer =
-                Configuration.GetSection("TokenOptions").GetSection("Issuer").Value;
-            _tokenOptions.SecurityKey =
-                Configuration.GetSection("TokenOptions").GetSection("SecurityKey").Value;
-
+            //_tokenOptions.AccessTokenExpiration =
+            //    int.Parse(Configuration.GetSection("TokenOptions").GetSection("AccessTokenExpiration").Value);
+            //_tokenOptions.Audience =
+            //    Configuration.GetSection("TokenOptions").GetSection("Audience").Value;
+            //_tokenOptions.Issuer =
+            //    Configuration.GetSection("TokenOptions").GetSection("Issuer").Value;
+            //_tokenOptions.SecurityKey =
+            //    Configuration.GetSection("TokenOptions").GetSection("SecurityKey").Value;
+            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
         }
 
 

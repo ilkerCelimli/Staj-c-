@@ -30,7 +30,14 @@ namespace Business.DependecyResorve.Ninject
 
             builder.RegisterType<ContactDal>().As<ContactDal>();
             builder.RegisterType<ContactManager>().As<IContactService>().SingleInstance();
-    
+
+
+            builder.RegisterType<UserDal>().As<UserDal>();
+            builder.RegisterType<UserManager>().As<IUserService>();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+
+
             builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
 
             var assemly = System.Reflection.Assembly.GetExecutingAssembly();
